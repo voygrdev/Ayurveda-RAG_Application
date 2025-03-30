@@ -24,28 +24,3 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-
-/* Add to your global.css or equivalent */
-.prose pre {
-  background-color: #1e1e1e !important;
-  border-radius: 0.5rem;
-  margin: 1em 0;
-  padding: 1em;
-}
-
-.prose code {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0.25rem;
-  padding: 0.2em 0.4em;
-  font-size: 0.9em;
-}
-
-.prose table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.katex-html {
-  display: none;
-}
