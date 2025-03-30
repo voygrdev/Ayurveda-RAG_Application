@@ -22,6 +22,16 @@
     "next": "15.2.4",
     "path": "^0.12.7",
     "react": "^19.0.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "i": "^0.3.7",
+    "katex": "^0.16.21",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
