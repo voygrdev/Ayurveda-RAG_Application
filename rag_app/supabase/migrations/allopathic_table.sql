@@ -15,6 +15,6 @@ CREATE TABLE allopathic (
 );
 
 -- Create index on the vector column using ivfflat
-CREATE INDEX allopathic_content_vector_idx ON allopathic
-USING ivfflat (content_vector vector_cosine_ops);
+CREATE INDEX allopathic_embedding_idx ON allopathic
+USING ivfflat (embedding vector_cosine_ops);
 
