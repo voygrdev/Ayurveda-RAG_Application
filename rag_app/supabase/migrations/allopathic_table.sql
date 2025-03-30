@@ -8,10 +8,8 @@ DROP TABLE IF EXISTS allopathic;
 CREATE TABLE allopathic (
     id BIGSERIAL PRIMARY KEY,
     content TEXT NOT NULL,        -- For storing the content
-    embedding vector(1536),  -- For storing embeddings
+    embedding vector(768),  -- For storing embeddings
     metadata JSONB,               -- For storing metadata
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Create index on the vector column using ivfflat
