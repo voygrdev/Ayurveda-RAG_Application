@@ -15,5 +15,5 @@ CREATE TABLE ayurvedic (
 );
 
 -- Create index on the vector column using ivfflat
-CREATE INDEX ayurvedic_content_vector_idx ON ayurvedic
-USING ivfflat (content_vector vector_cosine_ops);
+CREATE INDEX ayurvedic_embedding_idx ON ayurvedic
+USING ivfflat (embedding vector_cosine_ops);
