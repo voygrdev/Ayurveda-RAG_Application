@@ -7,7 +7,8 @@ DROP TABLE IF EXISTS ayurvedic;
 -- Create table
 CREATE TABLE ayurvedic (
     id BIGSERIAL PRIMARY KEY,
-    content_vector vector(1536),  -- For storing embeddings
+    content TEXT NOT NULL,        -- For storing the content
+    embedding vector(1536),  -- For storing embeddings
     metadata JSONB,               -- For storing metadata
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
