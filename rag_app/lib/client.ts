@@ -6,36 +6,12 @@ dotenv.config({
     path: '../.env.local'
 });
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = "http://127.0.0.1:54321";
+const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0';
 
 // Create a singleton instance
-export class SupabaseClient {
-    private static instance: ReturnType<typeof createClient>;
-
-    private constructor() {}
-
-    public static getInstance(): ReturnType<typeof createClient> {
-        if (!SupabaseClient.instance) {
-            if (!supabaseUrl || !supabaseAnonKey) {
-                throw new Error('Supabase URL and Anon Key are required');
-            }
-
-            SupabaseClient.instance = createClient(
-                supabaseUrl,
-                supabaseAnonKey,
-                {
-                    auth: {
-                        persistSession: true,
-                        autoRefreshToken: true,
-                    }
-                }
-            );
-        }
-
-        return SupabaseClient.instance;
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+    auth: {
+      persistSession: false, // Edge runtime doesn't support localStorage
     }
-}
-
-// Export the singleton instance
-export const supabase = SupabaseClient.getInstance();
+  });
